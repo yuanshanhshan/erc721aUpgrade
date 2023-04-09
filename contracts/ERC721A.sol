@@ -430,7 +430,7 @@ contract ERC721A is Context, ERC165, IERC721A {
           emit Transfer(address(0), to, updatedIndex++);
         } while (updatedIndex < end);
       }
-      _currentIndex = updatedIndex;
+      _currentIndex = _currentIndex + quantity;
     }
     _afterTokenTransfers(address(0), to, startTokenId, quantity);
   }
